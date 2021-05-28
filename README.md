@@ -12,3 +12,13 @@ Nesnenin oluşturulması ile ilgili tasarım kalıplarıdır.
 - İlgili nesneden bir tane oluşturulmak isteniyorsa Singleton Design Pattern kullanılabilir.
 - Sınıf nesnesinin somutlaştırılmasına gerek yoktur, bu static keyword ile sağlanır.
 
+#### Singleton Uygulama
+```java
+for (int i = 0; i < 10; i++) {
+    Singleton singleton = Singleton.getSingleton();
+}
+```
+Sayı artmaya devam etse dahi kurucu bir kere oluşturulur.
+
+Kullanılmasını beklemeden, sınıflar oluşturulurken yapılan bu yükleme işlemine **Eager Loading** denir.
+Fakat bu kullanım tarzı daha sonrasında bazı problemlerin oluşmasına neden olabilir.
