@@ -72,3 +72,32 @@ if (singleton == null) {
 }
 ```
 Bu iki kere null kontrolünün sağlandığı tasarım kalıbına **Double Checked Locking** denir. Böylelikle hem **Lazy Loading** yapmış olduk hem de **Thread Safe** çalışmış olduk. 
+
+### Factory Design Pattern
+Birbirine benzeyen sınıflar ile bir fabrika sınıf içerisinde nesne oluşturma çağrılarını gerçekleştirme mantığını esas alır.
+
+Bir arayüz ile kullanacağımız sınıfları kümeleriz örn: **Telefon** arayüzü. Telefonlarımız da **S8** ve **Note8** olsun bunlar için birer sınıf oluşturacak olursak (benzerliği sağlamak için ve her ikiside birer telefon olduğu için) **Telefon** arayüzünü implemente ederiz. 
+
+Program içerisinde herhangi bir yerde new'lemek yerine ise **TelefonFabrikasi** sınıfında dönüş tipi arayüz ile aynı olan static bir fonksiyon içerisinde gelecek olan telefon tipine göre nesne çağrılarını gerçekleştiririz.
+
+```java
+public class TelefonFabrikasi {
+
+	public static Telefon getTelefon(String model, String batarya, int en, int boy) {
+
+		Telefon telefon;
+		if ("S8".equalsIgnoreCase(model)) {
+			telefon = new S8(model, batarya, en, boy);
+		} else if ("Note8".contentEquals(model)) {
+			telefon = new Note8(model, batarya, en, boy);
+		} else {
+			throw new RuntimeException("Gecerli bir model degildir");
+		}
+		return telefon;
+
+	}
+
+}
+```
+
+Burada telefon tiplerine göre ayrı nesne çağrılarını gerçekleştirebilmek için if else yapılarından yararlandık, bu da ileride yeni sınıflar (telefonlar/telefon modelleri) eklendiğinde bir bağımlılık durumu ve karmaşaya sebep olacaktır.
