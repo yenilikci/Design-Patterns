@@ -101,3 +101,28 @@ public class TelefonFabrikasi {
 ```
 
 Burada telefon tiplerine göre ayrı nesne çağrılarını gerçekleştirebilmek için if else yapılarından yararlandık, bu da ileride yeni sınıflar (telefonlar/telefon modelleri) eklendiğinde bir bağımlılık durumu ve karmaşaya sebep olacaktır.
+
+###  Abstract Factory Design Pattern
+
+Factory deseninde TelefonFabrikasi adında bir sınıf oluşturmuştuk. Model bilgisine göre S8 veya Note8 telefonlarını üretiyorduk. Fakat yüzlerce model olabileceği için yüzlerce if else yazıldığında kodun karmaşık bir hale geleceğinden bahsetmiştik.
+
+Biz bu tasarım deseninde telefon fabrikasını arayüz olarak tanımlayıp S8Fabrikasi ve Note8Fabrikası olmak üzere ayrı fabrikalara ayırırız. S8Fabrikası sadece S8, Note8Fabrikasi ise sadece Note8 üretir. Bayiler ise S8 istediğinde S8  fabrikasından, Note8 istediklerinde Note8 fabrikasından istek yaparlar. Böylelikle karmaşıklıktan arındırılmış olur.
+
+
+```java
+public class TelefonBayi {
+
+	public static void main(String[] args) {
+
+		S8Fabrikasi s8Fabrikasi = new S8Fabrikasi();
+		Telefon s8 = s8Fabrikasi.getTelefon("S8", "2600mah", 4, 7);
+
+		Note8Fabrikasi note8Fabrikasi = new Note8Fabrikasi();
+		Telefon note8 = note8Fabrikasi.getTelefon("Note8", "3000mah", 5, 8);
+
+		System.out.println(s8);
+		System.out.println(note8);
+
+	}
+}
+```
