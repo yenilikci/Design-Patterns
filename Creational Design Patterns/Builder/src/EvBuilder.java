@@ -59,17 +59,9 @@ public class EvBuilder {
 		return ev;
 	}
 
-	public int getBanyoSayisi() {
-		return banyoSayisi;
-	}
-
 	public EvBuilder setBanyoSayisi(int banyoSayisi) {
 		this.banyoSayisi = banyoSayisi;
 		return this;
-	}
-
-	public int getTuvaletSayisi() {
-		return tuvaletSayisi;
 	}
 
 	public EvBuilder setTuvaletSayisi(int tuvaletSayisi) {
@@ -77,17 +69,9 @@ public class EvBuilder {
 		return this;
 	}
 
-	public int getBalkonSayisi() {
-		return balkonSayisi;
-	}
-
 	public EvBuilder setBalkonSayisi(int balkonSayisi) {
 		this.balkonSayisi = balkonSayisi;
 		return this;
-	}
-
-	public boolean isDubleks() {
-		return isDubleks;
 	}
 
 	public EvBuilder setDubleks(boolean isDubleks) {
@@ -95,17 +79,9 @@ public class EvBuilder {
 		return this;
 	}
 
-	public boolean isEsyali() {
-		return isEsyali;
-	}
-
 	public EvBuilder setEsyali(boolean isEsyali) {
 		this.isEsyali = isEsyali;
 		return this;
-	}
-
-	public boolean isHasOtopark() {
-		return hasOtopark;
 	}
 
 	public EvBuilder setHasOtopark(boolean hasOtopark) {
@@ -113,26 +89,14 @@ public class EvBuilder {
 		return this;
 	}
 
-	public boolean isHasCocukParki() {
-		return hasCocukParki;
-	}
-
 	public EvBuilder setHasCocukParki(boolean hasCocukParki) {
 		this.hasCocukParki = hasCocukParki;
 		return this;
 	}
 
-	public boolean isHasKlima() {
-		return hasKlima;
-	}
-
 	public EvBuilder setHasKlima(boolean hasKlima) {
 		this.hasKlima = hasKlima;
 		return this;
-	}
-
-	public boolean isHasHavuz() {
-		return hasHavuz;
 	}
 
 	public EvBuilder setHasHavuz(boolean hasHavuz) {
